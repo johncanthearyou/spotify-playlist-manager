@@ -1,20 +1,24 @@
+<!-- Setup -->
 <script>
-	import Header from './Header.svelte';
 	import './styles.css';
 </script>
 
-<div class="app">
-	<Header />
 
+<!-- Page Definition -->
+<div class="app">
+	<header>
+		<p align=center>Spotify Playlist Manager</p>
+	</header>
 	<main>
 		<slot />
 	</main>
-
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>visit <a href="https://github.com/johncanthearyou">github/johncanthearyou</a> to see more of my portfolio</p>
 	</footer>
 </div>
 
+
+<!-- Style Configuration -->
 <style>
 	.app {
 		display: flex;
