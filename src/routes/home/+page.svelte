@@ -1,5 +1,6 @@
 <!-- Setup -->
 <script>
+	import getAccessToken from "./getAccessToken"
 	import { onMount } from 'svelte';
 	onMount(() => {
         const authToken = sessionStorage.getItem("authToken")
@@ -13,7 +14,9 @@
 
 <!-- Page definition -->
 <section>
-    <button on:click={() => { window.location="/"}}>Log out</button>
+    <button on:click={() => { window.location="/"}}>Log Out</button>
+    <br />
+    <button on:click={getAccessToken}>Get Access Token</button>
     <br />
     home!
 </section>

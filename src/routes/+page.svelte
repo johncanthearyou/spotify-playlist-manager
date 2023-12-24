@@ -4,6 +4,8 @@
 	import { onMount } from 'svelte';
 	onMount(() => {
 		sessionStorage.removeItem("authToken");
+		sessionStorage.removeItem("acessToken");
+		sessionStorage.removeItem("refreshToken");
 		const currUrl = window.location.toString()
 		if (currUrl.includes("code=")) {
 			const authToken = currUrl.substring(currUrl.indexOf("code=")+5, currUrl.indexOf("&state="))
