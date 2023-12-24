@@ -1,8 +1,8 @@
 // TODO: need to use pkce extension for proper security
 
 export default async function getAccessToken() {
-    const clientId = "fe3a4d8ed5574bafa79967dfbc1a12d1"
-    const clientSecret = "0da4708c0b5e406098a2d0ecf7b75e9c"
+    const clientId = null
+    const clientSecret = null
 
     if (sessionStorage.getItem("refreshToken") === null) {
         console.log("getting access token from auth token")

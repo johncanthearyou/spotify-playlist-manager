@@ -1,6 +1,6 @@
 export default function authRedirect() {
     // TODO: this needs to use an env var
-    const clientId = "fe3a4d8ed5574bafa79967dfbc1a12d1"
+    const clientId = null
     const responseType = "code"
     // TODO: this needs to use an env var
     const redirectUri = "http://localhost:5173/"
