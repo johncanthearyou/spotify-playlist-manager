@@ -1,9 +1,12 @@
 <!-- Setup -->
 <script>
-	import getAccessToken from "./getAccessToken";
+	import { onMount } from 'svelte';
 	import getTopSongs from "./getTopSongs";
 
-	var topSongs = [];
+	var topSongs = []
+	onMount(async () => {
+		topSongs = await getTopSongs("short")
+	})
 </script>
 
 <!-- Page definition -->
