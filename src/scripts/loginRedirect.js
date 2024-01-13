@@ -1,4 +1,4 @@
-export default async function authRedirect() {
+export default async function loginRedirect() {
     sessionStorage.clear()
     const codeVerifier = generateRandomString(64)
     sessionStorage.setItem("codeVerifier", codeVerifier)

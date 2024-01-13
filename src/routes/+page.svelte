@@ -1,38 +1,20 @@
-<!-- Setup -->
 <script>
-	import authRedirect from "./authRedirect"
 	import { onMount } from 'svelte';
 	onMount(() => {
 		const currUrl = window.location.toString()
 		if (currUrl.includes("code=")) {
-			const urlParams = new URLSearchParams(window.location.search);
-			const code = urlParams.get('code');
-			sessionStorage.setItem("authToken", code);
+			const authToken = new URLSearchParams(window.location.search).get('code');
+			sessionStorage.setItem("authToken", authToken);
 			window.location = "/home"
 		}
 	});
 </script>
+
 <svelte:head>
-	<title>Authorization</title>
-	<meta name="description" content="Authorization page for Spotify Playlist Manager" />
+	<title>spotify-playlist-manager</title>
 </svelte:head>
-
-
-<!-- Page definition -->
 <section>
-	<button on:click={authRedirect}>
-		Log in
-	</button>
+	<!-- TODO: Put an overview of the app's features -->
+	<h1>Welcome to `spotify-playlist-manager`</h1>
+	<p>Please log in above</p>
 </section>
-
-
-<!-- Style configuration -->
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-</style>

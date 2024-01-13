@@ -1,4 +1,3 @@
-// TODO: need to use pkce extension for proper security
 export default async function getAccessToken() {
     if (sessionStorage.getItem("accessToken") != null) {
         return sessionStorage.getItem("accessToken")
@@ -24,6 +23,8 @@ export default async function getAccessToken() {
     const json = await response.json()
     sessionStorage.setItem("accessToken", json.access_token)
     sessionStorage.setItem("refreshToken", json.refresh_token)
+    sessionStorage.removeItem("authToken")
+    sessionStorage.removeItem("codeVerifier")
 
     return sessionStorage.getItem("accessToken")
 }
