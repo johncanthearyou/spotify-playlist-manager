@@ -1,7 +1,7 @@
 export default function isLoggedIn() {
-    const authToken = sessionStorage.getItem("authToken");
-    const accessToken = sessionStorage.getItem("accessToken");
-    const loggedIn = (authToken != null && authToken != undefined) || (accessToken != null && accessToken != undefined)
-
-    return loggedIn
+    const isNull = (sessionStorageName) => { 
+        const value = sessionStorageName.getItem(value)
+        return (value != null && value != "undefined")
+    }
+    return isNull("authToken") || isNull("accessToken")
 }

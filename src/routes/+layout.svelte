@@ -4,6 +4,7 @@
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
 
+	var pages = ["home", "tracks", "playlists"];
 	var loggedIn = false;
 	onMount(() => {
 		loggedIn = isLoggedIn();
@@ -20,10 +21,12 @@
 		<span align="left">Spotify Playlist Manager</span>
 		{#if !loggedIn}
 			<button on:click={loginRedirect}>Log in</button>
-			{:else}
-			<button on:click={() => window.location = "/home"}>/home</button>
-			<button on:click={() => window.location = "/tracks"}>/tracks</button>
-			<button on:click={() => window.location = "/playlists"}>/playlists</button>
+		{:else}
+			{#each pages as page}
+				<button on:click={() => (window.location = `/${page}`)}
+					>/{page}</button
+				>
+			{/each}
 			<button on:click={logoutRedirect}>Log Out</button>
 		{/if}
 	</header>
@@ -69,7 +72,7 @@
 		bottom: 24px; /* 20px font + 4px padding = 24px from bottom */
 		overflow: auto;
 	}
-	
+
 	footer {
 		position: fixed;
 		width: 100%;
